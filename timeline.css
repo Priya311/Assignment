@@ -1,0 +1,101 @@
+/* Timeline line */
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 20px 0;
+  width: 80%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  margin-left: -2px;
+  background: var(--primary-main, #fcc900);
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 30px;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-main, #fcc900);
+  border-radius: 50%;
+  border: 3px solid white;
+  z-index: 1;
+}
+
+.timeline-content h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  color: gray;
+}
+
+.timeline-item-left {
+  left: 0;
+  text-align: left;
+}
+
+.timeline-item-left::before {
+  right: -10px;
+}
+
+.timeline-item-right {
+  left: 50%;
+  text-align: right;
+}
+
+.timeline-item-right::before {
+  left: -10px;
+}
+
+/* Card styling */
+.timeline-content {
+  background: var(--bg-light, #fdfcf9);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 10px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    text-align: right !important;
+  }
+  .timeline-item::before {
+    left: 0;
+  }
+  .timeline-item-right {
+    left: 0;
+  }
+}
+
+.timeline-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-frame {
+  width: 100%; /* full width */
+  height: 800px; /* increase height so no scrollbars */
+  border: none; /* remove ugly border */
+  overflow: hidden; /* hide scrollbars */
+}
